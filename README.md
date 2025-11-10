@@ -17,15 +17,19 @@ python3 log_analyzer_flexible.py
 
 Then upload a log file:
 
+```bash
 curl -X POST -F "file=@logs/sample_router.log" http://localhost:3000/analyze
+```
 
 Example Output:
 
+```json
 {
   "detected_log_type": "router/network interface log",
   "total_lines": 11,
   "sample_preview": [...]
 }
+```
 
  Idea
 
@@ -33,7 +37,9 @@ This started as a small self-check tool for analyzing router traffic, and evolve
 
  Repo Structure
 
-app.py                    → Flask server
-logs/                     → Sample logs
-README.md                 → This file
-
+```
+log-analyzer/
+├── app.py                    → Flask server implementation
+├── logs/                     → Sample log files for testing
+└── README.md                 → Project documentation
+```
