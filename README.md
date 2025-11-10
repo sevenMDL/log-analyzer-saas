@@ -1,27 +1,28 @@
-# Log Analyzer SaaS (Python + Flask)
+Log Analyzer SaaS (Python + Flask)
 
-A minimal **Flask API** that detects the type of log file automatically — built as an experiment on the line between *a simple script* and *a micro SaaS*.
+A minimal Flask API that automatically detects log file types — built as an experiment exploring the boundary between a simple script and a micro SaaS.
 
-##  Features
-- Detects router, web server, system, and app error logs.
-- One POST endpoint: `/analyze`
-- Returns clean JSON response.
-- Zero dependencies beyond Flask and regex.
+Features
 
-##  Usage
+· Identifies router, web server, system, and application error logs
+· Single POST endpoint: /analyze
+· Provides clean JSON output
+· No dependencies beyond Flask and regex
+
+Usage
 
 ```bash
 pip install flask
 python3 log_analyzer_flexible.py
 ```
 
-Then upload a log file:
+Submit a log file:
 
 ```bash
 curl -X POST -F "file=@logs/sample_router.log" http://localhost:3000/analyze
 ```
 
-Example Output:
+Example Response:
 
 ```json
 {
@@ -31,15 +32,14 @@ Example Output:
 }
 ```
 
- Idea
+Concept
 
-This started as a small self-check tool for analyzing router traffic, and evolved into a simple API idea — part of exploring what makes a "micro SaaS" valuable.
+This began as a personal tool for router traffic analysis and grew into a simple API concept — part of investigating what constitutes a "micro SaaS" offering.
 
- Repo Structure
+Repository Structure
 
 ```
-log-analyzer/
-├── app.py                    → Flask server implementation
-├── logs/                     → Sample log files for testing
-└── README.md                 → Project documentation
+app.py                    → Flask server
+logs/                     → Sample log files  
+README.md                 → This document
 ```
